@@ -1,7 +1,36 @@
 import React from 'react'
 import { FaEnvelope, FaMapMarkedAlt, FaPhone } from 'react-icons/fa'
+import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "9c1d4bee-7585-4538-bebf-9b614a11f0cf");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      Swal.fire({
+        title: "Success !",
+        text: "Message Sent Successfully!",
+        icon: "success"
+      });
+    }
+  };
+
   return (
     <div className="bg-black text-white py-20" id="contact">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
@@ -27,20 +56,20 @@ const Contact = () => {
             </div> */}
           </div>
           <div className='flex-1 w-full'>
-            <form className='space-y-4'>
+            <form  onSubmit={handleSubmit} className='space-y-4'>
                 <div>
                     <label htmlFor="name" className='block mb-2'>Your Name</label>
                     <input type="text" 
                     className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
                     focus:border-green-400'
-                    placeholder='Enter You Name'/>
+                    placeholder='Enter You Name' name='name' required/>
                 </div>
                 <div>
-                    <label htmlFor="emial" className='block mb-2'>Email</label>
+                    <label htmlFor="email" className='block mb-2'>Email</label>
                     <input type="text" 
                     className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
                     focus:border-green-400'
-                    placeholder='Enter You Email'/>
+                    placeholder='Enter You Email' name='email' required/>
                 </div>
                 <div>
                     <label htmlFor="message" className='block mb-2'>Message</label>
@@ -48,7 +77,7 @@ const Contact = () => {
                     className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
                     focus:border-green-400'
                     rows="5"
-                    placeholder='Enter You Message'/>
+                    placeholder='Enter You Message'name='message'required/>
                 </div>
                 <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline
             transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full'>Send</button>
