@@ -79,8 +79,12 @@ const Contact = () => {
                     rows="5"
                     placeholder='Enter You Message'name='message'required/>
                 </div>
-                <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline
-            transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full'>Send</button>
+                <div className='flex mt-6'>
+        <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-2 rounded-full shadow-md 
+        transform transition-transform duration-300 hover:scale-110 sm:px-4 sm:py-1 md:px-6 md:py-2 lg:px-8 lg:py-3'>
+          Send
+        </button>
+      </div>
             </form>
           </div>
         </div>
