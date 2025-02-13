@@ -15,10 +15,12 @@ const Navbar = () => {
 
     if (menuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
+      
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      
     };
   }, [menuOpen]);
 
@@ -51,8 +53,9 @@ const Navbar = () => {
 
         {/* Connect Button */}
         <a
-          className="hidden md:inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold px-6 py-2 rounded-full shadow-md 
-          transform transition-transform duration-300 hover:scale-110"
+          className="hidden md:inline-block relative px-6 py-3 font-semibold text-white text-lg 
+             rounded-full transition-all duration-300 bg-gradient-to-r from-green-500 to-blue-700 
+             shadow-lg shadow-green-400/50 hover:scale-110 hover:shadow-xl hover:shadow-blue-500/60"
           href="https://www.linkedin.com/in/mayank-wankhede-b5534b283/"
           target="_blank"
           rel="noopener noreferrer"
