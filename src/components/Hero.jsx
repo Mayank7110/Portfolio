@@ -3,7 +3,7 @@ import HeroImage from '../assets/hero-image.jpg'
 
 const Hero = () => {
   return (
-    <div className='bg-black text-white text-center py-16'>
+    <div className='bg-black text-white text-center py-16 mt-12 ' id="home">
         <img src={HeroImage} alt="" 
         className='mx-auto mb-8 w-48 h-48 rounded-full object-cover transform 
         transition-transform duration-300 hover:scale-105'/>
@@ -19,7 +19,7 @@ const Hero = () => {
             <a
             className='bg-gradient-to-r from-green-500 to-blue-700 text-white
             transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'
-             href='https://www.linkedin.com/in/mayank-wankhede-b5534b283/' target='blank'>Contact With Me</a>
+             href='#contact' target='blank'>Contact With Me</a>
             <a
             className='bg-gradient-to-r from-pink-500 to-yellow-500 text-white
             transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>Resume</a>

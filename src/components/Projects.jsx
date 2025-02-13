@@ -1,7 +1,7 @@
 import React from "react";
 import Portfolio from "../assets/Portfolio.png";
 import Studynotion from "../assets/Studynotion.png";
-import Password11 from "../assets/Password11.png";
+import CodeEditor from "../assets/CodeEditor.png";
 import Weather from "../assets/Weather.png";
 
 const projects = [
@@ -15,24 +15,25 @@ const projects = [
   {
     id: 2,
     name: "Portfolio ",
-    technologies: "MERN Stack",
+    technologies: "ReactJs",
     image: Portfolio,
     github: "https://github.com/Mayank7110/Portfolio",
   },
   {
     id: 3,
+    name: "CodeEditor",
+    technologies: "ReactJs",
+    image: CodeEditor,
+    github: "https://github.com/Mayank7110/CodeEditor",
+  },
+  {
+    id: 4,
     name: "Weather App",
     technologies: "Javascript",
     image: Weather,
     github: "https://github.com/Mayank7110/Weather-app",
   },
-  {
-    id: 4,
-    name: "Password Generator",
-    technologies: "Javascript",
-    image: Password11,
-    github: "https://github.com/Mayank7110/Password_generator",
-  },
+
 ];
 
 const Projects = () => {
