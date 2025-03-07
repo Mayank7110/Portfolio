@@ -73,23 +73,25 @@ const Navbar = () => {
       {menuOpen && (
         <div
           ref={menuRef}
-          className="md:hidden flex flex-col items-center space-y-4 py-4 bg-gray-800 text-white shadow-xl rounded-lg 
-          absolute top-16 right-4 w-48 z-50 border border-gray-600"
+          className="md:hidden flex flex-col items-center space-y-4 py-6 bg-gray-800 text-white shadow-xl rounded-lg absolute top-16 right-2 w-48 z-50 border border-gray-600 backdrop-blur-md"
         >
-          <a href="#home" className="block w-full text-center py-2 hover:bg-gray-700 rounded-md transition duration-300" onClick={() => setMenuOpen(false)}>
-            Home
-          </a>
-          <a href="#about" className="block w-full text-center py-2 hover:bg-gray-700 rounded-md transition duration-300" onClick={() => setMenuOpen(false)}>
-            About Me
-          </a>
-          <a href="#service" className="block w-full text-center py-2 hover:bg-gray-700 rounded-md transition duration-300" onClick={() => setMenuOpen(false)}>
-            Services
-          </a>
-          <a href="#project" className="block w-full text-center py-2 hover:bg-gray-700 rounded-md transition duration-300" onClick={() => setMenuOpen(false)}>
-            Projects
-          </a>
-          <a href="#contact" className="block w-full text-center py-2 hover:bg-gray-700 rounded-md transition duration-300" onClick={() => setMenuOpen(false)}>
-            Contact
+          {['Home', 'About Me', 'Services', 'Projects', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(' ', '')}`}
+              className="block w-full text-center py-3 font-bold text-lg uppercase bg-gray-700 rounded-md transition duration-300 hover:bg-green-500 hover:scale-105"
+              onClick={() => setMenuOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+          <a
+            href="https://www.linkedin.com/in/mayank-wankhede-b5534b283/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center py-3 font-bold text-lg uppercase bg-blue-600 rounded-md transition duration-300 hover:bg-blue-800 hover:scale-105"
+          >
+            Connect
           </a>
         </div>
       )}
